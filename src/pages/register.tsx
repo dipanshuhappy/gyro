@@ -60,7 +60,7 @@ function index() {
                 </Button>
               </Stack>
               <Text marginTop={"4"}>
-                If you are existing user , then <Link> Sign in</Link>
+                If you are existing user, then  <Link> Sign in</Link>
               </Text>
             </Box>
           </Flex>
