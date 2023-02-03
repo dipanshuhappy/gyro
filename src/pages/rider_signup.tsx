@@ -24,7 +24,7 @@ function RiderSignUp() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign={"center"}>
-            Sign up as Driver
+            Sign up as Passenger
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
             welcome to the first commission less taxi software ✌️
