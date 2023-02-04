@@ -16,9 +16,12 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
+import NextLink from "next/link";
 
 function DriverSignUp() {
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
   return (
     <Flex minH={"100vh"} align={"center"} justify={"center"}>
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
@@ -76,13 +79,23 @@ function DriverSignUp() {
               </InputGroup>
             </FormControl>
             <Stack spacing={10} pt={2}>
-              <Button loadingText="Submitting" size="lg" colorScheme={"brand"}>
+              <Button
+                loadingText="Submitting"
+                size="lg"
+                colorScheme={"brand"}
+                onClick={() => {
+                  router.push("/car_register");
+                }}
+              >
                 Send for Verification
               </Button>
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
-                Already a user? <Link color={"blue.400"}>Login</Link>
+                Already a user?{" "}
+                <Link color={"blue.400"} as={NextLink} href="/driver_ride">
+                  Login
+                </Link>
               </Text>
             </Stack>
           </Stack>

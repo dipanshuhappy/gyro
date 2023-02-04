@@ -4,9 +4,12 @@ import FullLayout from "@/layout/fullLayout";
 import { Box, Center, Flex, Stack, Text, Link } from "@chakra-ui/react";
 // import { Image } from "@chakra-ui/react";
 import Image from "next/image";
+import NextLink from "next/link";
 
 import { Button, ButtonGroup } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 function index() {
+  const router = useRouter();
   return (
     <FullLayout>
       <>
@@ -52,15 +55,29 @@ function index() {
                   variant="solid"
                   size="lg"
                   marginBottom={"8"}
+                  onClick={() => {
+                    router.push("/drivers_signup");
+                  }}
                 >
                   Register as a Driver
                 </Button>
-                <Button colorScheme="brand" variant="solid" size="lg">
+                <Button
+                  colorScheme="brand"
+                  variant="solid"
+                  size="lg"
+                  onClick={() => {
+                    router.push("/rider_signup");
+                  }}
+                >
                   Register as a Passenger
                 </Button>
               </Stack>
               <Text marginTop={"4"}>
-                If you are existing user, then  <Link> Sign in</Link>
+                If you are existing user, then{" "}
+                <Link as={NextLink} href="/book_ride">
+                  {" "}
+                  Sign in
+                </Link>
               </Text>
             </Box>
           </Flex>
